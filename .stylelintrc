@@ -1,0 +1,10 @@
+{
+  "extends": ["stylelint-config-recommended-scss","stylelint-config-recess-order"],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "declaration-block-semicolon-newline-after": "always",
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors":true,
+    "block-no-empty": true
+  }
+}

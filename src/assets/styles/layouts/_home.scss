@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  font-family: $font-family-sans-serif;
+  font-size: 12px;
+
+  @media screen  and (min-width: $mqMinWidth){
+    font-size: 16px;
+  }
+}
+
+main {
+  position: relative;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+h1{
+  font-size:40px;
+  font-weight: bolder;
+  text-align:center;
+  text-shadow: $vermell;
+
+  @media screen  and (min-width: $mqMinWidth2){
+    font-size: 100px;
+  }
+}
+
+span.sub{
+  font-size: 20px;
+  vertical-align: sub;
+
+  @media screen  and (min-width: $mqMinWidth2){
+    font-size: 50px;
+  }
+
+  @media screen  and (max-width: $mqMaxWidth){
+    display: block;
+  }
+}
+
+.navbar-brand img{
+  margin-left: 2rem;
+
+}
+
+.navbar-nav{
+  margin-right: 2rem;
+}
+
+.responsive {
+  width: 100%;
+  height: auto; 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300.1fr));
+  grid-gap: 8px;
+}
+
+.grid-item1 {
+  grid-area: 1 / 1 / span 3 / span 1;
+  border: black 5px solid;
+}
+
+.grid-item2 {
+  grid-area: 4 / 1 / span 3 / span 1;
+  border: black 5px solid;
+}
+
+.grid-item3 {
+  
+  grid-area: 1 / 2 / span 2 / span 1;
+  border: black 5px solid;
+}
+
+.grid-item4 {
+  grid-area: 3 / 2 / span 2 / span 1;
+  border: black 5px solid;
+}
+
+//pagina2
+
+.flex div {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.flex h3 {
+  line-height: 1.2;
+}
+
+@media (min-width: $mqMinWidth) {
+  
+  .flex {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 2rem;
+  }
+  .flex div.flex-item {
+    width: 25%;
+    margin-right: 3%;
+    margin-bottom: 0;
+    margin-left: 4%;
+   
+ }
+  .flex div.content {
+      padding: 15px;
+  }
+}
+
+@media (min-width: $mqMinWidth) {
+  
+  .flex div:nth-child(odd) {
+      background-color:$gris;
+  }
+}
+
+// pagina 3
+
+.article {
+  width: 90%;
+  max-width: 1000px;
+  padding-top: 2rem;
+  margin: 0 auto;
+}
+
+.copy {
+  padding-top: 0;
+  font-size: 0.7rem; 
+}
+
+.intro {
+  width: 90%;
+  padding: 15px 0;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: $negre;
+}
+
+span.blau{
+  display: inline-block;
+  width: 1.6em;
+  color:$negre;
+  text-align: center;
+  background: $blau;
+  border-radius: 0.8em;
+}
+
+.article dd{
+  margin-left: 2rem;
+}
+
+#article.grid-container {
+  display: block;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 24px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.article blockquote {
+  padding-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  font: 14px/22px normal helvetica, sans-serif;
+  font-weight: bolder;
+  border-left: 3px solid $gris
+}
+
+@media (min-width: $mqMinWidth) {
+  
+  .article blockquote {
+      font-size: 20px;
+  }
+
+  #article.grid-container{
+    display:grid;
+  }
+}
+
+// pagina 4
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1em;
+  }
+
+
+.location-listing {
+  position: relative;
+}
+
+.location-image {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.location-image img {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1);
+}
+
+.location-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: $blanc;
+  text-decoration: none;
+  background: $gris_fosc;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.location-listing:hover .location-title {
+  opacity: 1;
+}
+
+.location-listing:hover .location-image img {
+  filter: blur(2px);
+}
+
+@media (hover: none) { 
+  .location-title {
+    opacity: 1;
+  }
+  .location-image img {
+    filter: blur(2px);
+  }
+}
